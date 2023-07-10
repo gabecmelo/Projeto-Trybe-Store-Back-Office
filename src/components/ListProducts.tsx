@@ -4,10 +4,10 @@ import Product from './Product';
 
 type Props = {
   products: ProductWithId[]
-  handleDelete: (() => void)
+  // handleDelete: (() => void)
 };
 
-export default function ListProducts({ products, handleDelete }: Props) {
+export default function ListProducts({ products /* handleDelete, */ }: Props) {
   return (
     <main>
       <h1>Lista de produtos</h1>
@@ -17,7 +17,7 @@ export default function ListProducts({ products, handleDelete }: Props) {
           <Product
             key={ product.id }
             productInfo={ product }
-            handleDelete={ handleDelete }
+          // handleDelete={handleDelete}
           />))}
       </div>
     </main>

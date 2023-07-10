@@ -1,26 +1,24 @@
 import React from 'react';
-import Product from './Product';
+// import Product from './Product';
 import '../styles/RegisterProduct.css';
 
 type Props = {
-  handleSubmit: () => void
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  handleChange: ({ target }:
+  React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
 };
 
 export default function RegisterProduct(props: Props) {
-  const { handleSubmit } = props;
-
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
+  const { handleSubmit, handleChange } = props;
 
   return (
     <main>
       <h1>Cadastrar novo produto</h1>
       <div className="register-container">
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ handleSubmit }>
           <label htmlFor="name">
             Nome
-            <input type="text" id="name" required />
+            <input onChange={ handleChange } type="text" id="name" required />
           </label>
           <label htmlFor="description">
             Descrição
