@@ -11,14 +11,15 @@ export default function Product({
   handleDelete = undefined,
   productInfo,
 }: Props) {
-  const { name, description, price, image, tags /* id */ } = productInfo as ProductWithId;
+  const { nameProduct, description,
+    price, image, tags /* id */ } = productInfo as ProductWithId;
   const tagsList = tags ? tags.split(',').map((tag) => tag.trim()) : [];
 
   return (
     <div data-testid="product-container" className="product-container">
       {handleDelete && <button onClick={ handleDelete }>X</button>}
-      <img src={ image || imgNotFound } alt={ name } />
-      <h3>{name}</h3>
+      <img src={ image || imgNotFound } alt={ nameProduct } />
+      <h3>{nameProduct}</h3>
       <h4>
         R$
         {' '}

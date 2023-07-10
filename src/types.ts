@@ -1,5 +1,5 @@
 export type ProductType = {
-  name: string;
+  nameProduct: string;
   price: number | undefined;
   description: string;
   tags?: string;

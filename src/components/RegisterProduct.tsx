@@ -1,15 +1,34 @@
-import React from 'react';
-// import Product from './Product';
+import React, { useState } from 'react';
+import Product from './Product';
 import '../styles/RegisterProduct.css';
+
+import { ProductType } from '../types';
 
 type Props = {
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
-  handleChange: ({ target }:
-  React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
 };
 
+const INITIAL_STATE = {
+  nameProduct: '',
+  price: undefined,
+  description: '',
+  tags: '',
+  image: '',
+} as ProductType;
+
 export default function RegisterProduct(props: Props) {
-  const { handleSubmit, handleChange } = props;
+  const { handleSubmit } = props;
+  const [listProducts, setListProducts] = useState(INITIAL_STATE);
+  const { nameProduct, description, price } = listProducts;
+
+  const handleChange = ({ target }:
+  React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = target;
+    setListProducts({
+      ...listProducts,
+      [name]: value,
+    });
+  };
 
   return (
     <main>
@@ -18,27 +37,48 @@ export default function RegisterProduct(props: Props) {
         <form onSubmit={ handleSubmit }>
           <label htmlFor="name">
             Nome
-            <input onChange={ handleChange } type="text" id="name" required />
+            <input
+              onChange={ handleChange }
+              name="nameProduct"
+              value={ nameProduct }
+              type="text"
+              id="name"
+              required
+            />
           </label>
           <label htmlFor="description">
             Descrição
-            <input type="text" id="description" required />
+            <input
+              onChange={ handleChange }
+              name="description"
+              value={ description }
+              type="text"
+              id="description"
+              required
+            />
           </label>
           <label htmlFor="price">
             Preço
-            <input type="number" id="price" required />
+            <input
+              onChange={ handleChange }
+              name="price"
+              value={ price }
+              type="number"
+              id="price"
+              required
+            />
           </label>
           <label htmlFor="image">
             Imagem
-            <input type="text" id="image" />
+            <input onChange={ handleChange } name="image" type="text" id="image" />
           </label>
           <label htmlFor="tags">
             Tags
-            <input type="text" id="tags" />
+            <input onChange={ handleChange } name="tags" type="text" id="tags" />
           </label>
           <button type="submit">Salvar</button>
         </form>
-        {/* <Product productInfo={} /> */}
+        <Product productInfo={ listProducts } />
       </div>
     </main>
   );
