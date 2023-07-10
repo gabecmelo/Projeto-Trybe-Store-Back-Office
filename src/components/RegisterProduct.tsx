@@ -7,11 +7,10 @@ type Props = {
   handleChange: ({ target }:
   React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   listProducts: ProductType
-  handleDelete: (product: any) => void
 };
 
 export default function RegisterProduct(props: Props) {
-  const { handleSubmit, handleChange, listProducts, handleDelete } = props;
+  const { handleSubmit, handleChange, listProducts } = props;
   const { name, description, image, tags, price } = listProducts;
 
   return (
@@ -75,7 +74,6 @@ export default function RegisterProduct(props: Props) {
           <button type="submit">Salvar</button>
         </form>
         <Product
-          handleDelete={ handleDelete }
           productInfo={ listProducts }
         />
       </div>

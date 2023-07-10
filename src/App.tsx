@@ -72,7 +72,6 @@ function App() {
               handleChange={ handleChange }
               listProducts={ listProducts }
               handleSubmit={ handleSubmit }
-              handleDelete={ handleDelete }
           />
           : <ListProducts handleDelete={ handleDelete } products={ SubmittedProducts } />
       }
