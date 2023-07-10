@@ -16,6 +16,7 @@
     "fix": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .ts,.tsx --fix ./src"
   },
   "dependencies": {
+    "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
