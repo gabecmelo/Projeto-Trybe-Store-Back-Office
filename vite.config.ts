@@ -18,4 +18,5 @@ export default defineConfig({
       exclude: [],
     },
   },
+  base: "/Projeto-Trybe-Store-Back-Office"
 });

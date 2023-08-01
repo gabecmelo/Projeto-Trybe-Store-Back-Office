@@ -1,9 +1,8 @@
 import { ProductType, ProductWithId } from '../types';
-import imgNotFound from '../assets/imgNotFound.png';
 import '../styles/Product.css';
 
 type Props = {
-  handleDelete?: (product: any) => void | undefined
+  handleDelete?: () => void | undefined
   productInfo: ProductWithId | ProductType
 };
 
@@ -18,7 +17,7 @@ export default function Product({
   return (
     <div data-testid="product-container" className="product-container">
       {handleDelete && <button onClick={ handleDelete }>X</button>}
-      <img src={ image || imgNotFound } alt={ name } />
+      <img src={ image || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png' } alt={ name } />
       <h3>{name}</h3>
       <h4>
         R$
