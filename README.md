@@ -8,6 +8,12 @@ O projeto Store Back Office da Trybe é um exercício proposto com o objetivo de
 
 Acesse a aplicação [aqui](https://gabecmelo.github.io/Projeto-Trybe-Store-Back-Office).
 
+## Preview
+
+<div style="display: flex;">
+  <img style="width: 49%;" src="/images/ScreenshotExample.png" alt="Flexbox Froggy Screenshot">
+  <img style="width: 49%;" src="/images/ScreenshotExample(2).png" alt="Flexbox Froggy Screenshot">
+</div>
 ## Tecnologias utilizadas
 
 *   React
