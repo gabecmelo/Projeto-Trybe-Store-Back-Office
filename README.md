@@ -38,7 +38,7 @@ ou
 
 <!---->
 
-    cd repositorio-do-projeto
+    cd [repositorio-do-projeto]
 
 3.  Instale as dependências do projeto:
 
